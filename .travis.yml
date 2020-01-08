@@ -9,7 +9,11 @@ env:
         # that you need, that are also specified in BUILD_DEPENDS, this will be
         # a separate install.
         - TEST_DEPENDS="pytest"
-        - PLAT=x86_64
+        - if [[ "$TRAVIS_CPU_ARCH" == "arm64" ]]; then
+            PLAT=aarch64
+          else
+            PLAT=x86_64
+          fi
         - CONFIG_PATH="ci/multibuild_config.sh"
 
 language: python
