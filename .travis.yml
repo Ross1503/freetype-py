@@ -45,14 +45,14 @@ matrix:
         - BUILD_SDIST=1
     - os: linux  # Bundle 64 bit library.
       arch: arm64
-      PLAT=aarch64
       env:
+        - PLAT=aarch64
         - MB_PYTHON_VERSION=3.6
         - FREETYPEPY_BUNDLE_FT=1
     - os: linux  # No bundling.
       arch: arm64
-      PLAT=aarch64
       env:
+        - PLAT=aarch64
         - MB_PYTHON_VERSION=3.6
         - BUILD_SDIST=1
     - os: osx
